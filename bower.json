@@ -1,0 +1,8 @@
+{
+  "name": "jie-mask",
+  "version": "0.0.1",
+  "main": "jie-mask.html",
+  "dependencies": {
+    "polymer": "~0.5.0"
+  }
+}

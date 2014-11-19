@@ -1,0 +1,66 @@
+<!--
+  # mask
+
+  遮罩层
+
+  * 可以通过 `this.shown` 属性和 `[shown]` 特性控制显隐
+  * 默认为隐藏
+
+  # Example
+
+  ```
+  <jie-mask shown style="background-color: silver; opacity: 0.25;"></jie-mask>
+
+  <script>
+    var mask = document.querySelector('jie-mask');
+
+    mask.shown = true;
+    mask.shown = false;
+  </script>
+  ```
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="jie-mask" attributes="shown">
+
+  <template>
+    <style>
+      :host {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0.5;
+      }
+    </style>
+  </template>
+
+  <script>
+    Polymer('jie-mask', {
+
+      /**
+       * 记录该遮罩层是否显示
+       * @type {Boolean}
+       */
+      shown: false,
+
+      /**
+       * 初始化显隐
+       */
+      domReady: function () {
+        this.style.display = !!this.shown ? 'block' : 'none';
+      },
+
+      /**
+       * 在 `this.shown` 发生变化时更新界面
+       */
+      shownChanged: function (oldValue, newValue) {
+        this.style.display = !!newValue ? 'block' : 'none';
+      }
+    });
+  </script>
+
+</polymer-element>
