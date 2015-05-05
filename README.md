@@ -5,12 +5,18 @@ Mask element, which could toggle with `this.shown` or `[shown]` attribute
 ## Examples
 
 ```
-<z-mask id="z-mask-test" shown style="background-color: silver; opacity: 0.25;"></z-mask>
+<z-btn id="z-mask-toggle">Show Mask for 1 seconds</z-btn>
+<z-mask id="z-mask-test" style="background-color: silver; opacity: 0.25;"></z-mask>
 
 <script>
   var mask = document.querySelector('html /deep/ #z-mask-test');
+  var btn = document.querySelector('html /deep/ #z-mask-toggle');
 
-  mask.shown = true;
-  mask.shown = false;
+  btn.addEventListener('click', function () {
+    mask.shown = true;
+    setTimeout(function () {
+      mask.shown = false;
+    }, 1000);
+  });
 </script>
 ```
