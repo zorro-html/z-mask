@@ -1,28 +1,31 @@
 <!--
-  # mask
 
-  遮罩层
+@element z-mask
 
-  * 可以通过 `this.shown` 属性和 `[shown]` 特性控制显隐
-  * 默认为隐藏
+# `<z-mask>`
 
-  # Example
+Mask element, which could toggle with `this.shown` or `[shown]` attribute
 
-  ```
-  <jie-mask shown style="background-color: silver; opacity: 0.25;"></jie-mask>
+-->
 
-  <script>
-    var mask = document.querySelector('jie-mask');
+<!--
 
-    mask.shown = true;
-    mask.shown = false;
-  </script>
-  ```
+@example default
+
+<z-mask id="z-mask-test" shown style="background-color: silver; opacity: 0.25;"></z-mask>
+
+<script>
+  var mask = document.querySelector('html /deep/ #z-mask-test');
+
+  mask.shown = true;
+  mask.shown = false;
+</script>
+
 -->
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="jie-mask" attributes="shown">
+<polymer-element name="z-mask" attributes="shown">
 
   <template>
     <style>
@@ -39,7 +42,7 @@
   </template>
 
   <script>
-    Polymer('jie-mask', {
+    Polymer('z-mask', {
 
       /**
        * 记录该遮罩层是否显示
