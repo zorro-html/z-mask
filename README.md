@@ -2,6 +2,12 @@
 
 Mask element, which could toggle with `this.shown` or `[shown]` attribute
 
+## Import
+
+```
+<link rel="import" href="z-mask/z-mask.html">
+```
+
 ## Examples
 
 ```
